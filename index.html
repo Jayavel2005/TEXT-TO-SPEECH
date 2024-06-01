@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEXT TO SPEECH</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container-fluid p-5 ">
+      <h1 class="text-center display-4 title">TEXT TO SPEECH</h1>
+      <div class="container">
+      <div class="my-3">
+        <textarea class="form-control " name="" id="texttospeech" rows="10" placeholder=" Enter a text here...." ></textarea>
+        <div class="d-flex justify-content-center">
+            <button  onclick="Click()" class="btn btn-primary my-3 custom-button">TEXT TO SPEECH</button>
+          </div>
+      </div>
+    </div>
+      <div class="container text-center">
+      <p class="lead text-light">&copy;2024 JAYAVEL. All rights reserved</p>
+    </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        let speech = new SpeechSynthesisUtterance();
+        
+        function Click(){
+            let textInput=document.querySelector("#texttospeech").value;
+            speech.text=textInput;
+            speech.volume=1;
+            speech.pitch=1;
+            speech.rate=1;
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+
+    
+  </body>
+</html>
